@@ -50,4 +50,4 @@ docker build .
 License
 ------
 
-This project is under [BSD]() license
+This project is under [BSD](https://github.com/kanokkorn/RL-bot/blob/master/LICENSE) license
