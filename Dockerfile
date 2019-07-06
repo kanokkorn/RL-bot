@@ -1,5 +1,6 @@
 # Download base image ubuntu 16.04
 FROM ubuntu:16.04
+MAINTAINER kanokkorn <kanokorn@outlook.jp>
 
 # Update Ubuntu Software repo
 RUN apt-get update
@@ -23,4 +24,9 @@ RUN rosdep update
 
 # Env setup
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc && source ~/.bashrc
+
+# TensorFlow setup
+RUN apt install libatlas-base-dev
+RUN pip3 install tensorflow
+
 
