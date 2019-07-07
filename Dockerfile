@@ -28,5 +28,3 @@ RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc && source ~/.bashrc
 # TensorFlow setup
 RUN apt install libatlas-base-dev
 RUN pip3 install tensorflow
-
-
