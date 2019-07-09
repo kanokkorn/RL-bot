@@ -45,10 +45,16 @@ Usage
 ------
 
 1. Clone this repository.
-2. run this command
+1. For pre-setup run
 
 ```bash
-docker build .
+sudo run.sh
+```
+
+- If the setup is done or you have your own setup then run this command
+
+```bash
+sudo docker build .
 ```
 
 License
