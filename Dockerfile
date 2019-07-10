@@ -4,7 +4,7 @@ MAINTAINER kanokkorn <kanokorn@outlook.jp>
 
 # Update Ubuntu Software repo
 RUN apt-get update
-RUN apt-get upgrade
+RUN yes | apt-get upgrade
 
 # Add sources.list & add PPA key 
 RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -12,11 +12,11 @@ RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E
 
 # Update again
 RUN apt-get update
-RUN apt-get upgrade
+RUN yes | apt-get upgrade
 
 # Install ROS base
-RUN apt install ros-melodic-ros-base
-RUN apt install ros-melodic-slam-gmapping
+RUN yes | apt install ros-melodic-ros-base
+RUN yes | apt install ros-melodic-slam-gmapping
 
 # init ros-dep
 RUN rosdep init
@@ -26,10 +26,10 @@ RUN rosdep update
 RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc && source ~/.bashrc
 
 # TensorFlow setup
-RUN apt install libatlas-base-dev
+RUN yes | apt install libatlas-base-dev
 
 # Kinect
-RUN apt-get install libfreenect-dev
+RUN yes | apt-get install libfreenect-dev
 
-# RTABMAP_ROS
-RUN apt-get intall 
+# RTABMAP_ROS waiting for comfirmation
+# RUN apt-get intall 
