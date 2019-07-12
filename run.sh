@@ -40,7 +40,7 @@ Yes | sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli contai
 # Ask if user want to run dockerfile
 PS3 = 'Do you want to build dockerfile now?'
 options = ("Yes" "No")
-select opt in "${option[@]}"
+select opt in "${options[@]}"
 do
     case $opt in
         "Yes")
