@@ -7,15 +7,19 @@ How this work
 ------
 
 ```text
-                        +--------------------------------------------+
-                        |                  Docker                    |
-                        |          Ubuntu 16.04 LTS image            |
-                        |  +-----------+ +----------+ +-----------+  |
-                        |  |  Robot    | | Python3  | |3D Mapping |  |
-                        |  | Operating | |    +     | |           |  |
-                        |  |  system   | |TensorFlow| |           |  |
-                        |  +-----------+ +----------+ +-----------+  |
-                        +--------------------------------------------+
+                        +------------------------------------+
+                        |           Infrastructure           |
+                        +------------------------------------+
+                        |               Host OS              |
+                        +------------------------------------+
+                        |                Docker              |
+                        +-----------+------------+-----------+
+                        |           |            |           |
+                        |    ROS    | TensorFlow |  RTABMAP  |
+                        | Container |  Container | Container |
+                        |           |            |           |
+                        +-----------+------------+-----------+
+
 ```
 
 Docker image contain Robot Operating System (ROS) and Machine Learning framework such as TensorFlow, Pytorch, Keras, etc.
