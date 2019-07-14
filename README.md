@@ -42,7 +42,7 @@ Required
 ------
 
 - [Docker CE](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce) for Raspberry Pi
-- GNUplot
+- MeshLab
 - Python 3.6
 
 Usage
