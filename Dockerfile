@@ -1,35 +1,43 @@
-# Download base image ubuntu 16.04
-FROM ubuntu:16.04
-MAINTAINER kanokkorn <kanokorn@outlook.jp>
+# This is an auto generated Dockerfile for ros:ros-core
+# generated from docker_images/create_ros_core_image.Dockerfile.em
+FROM ubuntu:trusty
 
-# Update Ubuntu Software repo
-RUN apt-get update
-RUN apt-get upgrade
+# install packages
+RUN apt-get update && apt-get install -q -y \
+    dirmngr \
+        gnupg2 \
+            lsb-release \
+                && rm -rf /var/lib/apt/lists/*
 
-# Add sources.list & add PPA key 
-RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+# setup keys
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
-# Update again
-RUN apt-get update
-RUN apt-get upgrade
+# setup sources.list
+RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list
 
-# Install ROS base
-RUN apt install ros-melodic-ros-base
-RUN apt install ros-melodic-slam-gmapping
+# install bootstrap tools
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    python-rosdep \
+        python-rosinstall \
+            python-vcstools \
+                && rm -rf /var/lib/apt/lists/*
 
-# init ros-dep
-RUN rosdep init
-RUN rosdep update
+# setup environment
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
 
-# Env setup
-RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc && source ~/.bashrc
+# bootstrap rosdep
+RUN rosdep init \
+    && rosdep update
 
-# TensorFlow setup
-RUN apt install libatlas-base-dev
+# install ros packages
+ENV ROS_DISTRO indigo
+RUN apt-get update && apt-get install -y \
+    ros-indigo-ros-core=1.1.6-0* \
+        && rm -rf /var/lib/apt/lists/*
 
-# Kinect
-RUN apt-get install libfreenect-dev
+# setup entrypoint
+COPY ./ros_entrypoint.sh /
 
-# RTABMAP_ROS
-RUN apt-get intall 
+ENTRYPOINT ["/ros_entrypoint.sh"]
+CMD ["bash"]
