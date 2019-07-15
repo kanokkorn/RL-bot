@@ -58,7 +58,7 @@ sudo run.sh
 - If the setup is done or you have your own setup then run this command
 
 ```bash
-sudo docker build .
+sudo docker-compose up -d
 ```
 
 License
