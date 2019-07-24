@@ -30,7 +30,7 @@ Hardware
 
 - Raspberry Pi 3 Model B with Raspbian image SD card
 - RGB-D or Stereo image Camera (Microsoft Kinect is highly recommended)
-- 2WD Car-like mobile robot (CLMR)
+- Smart Robot Car kit
 - Arduino UNO R3
 
 How to assemble robot
@@ -58,7 +58,7 @@ sudo run.sh
 - If the setup is done or you have your own setup then run this command
 
 ```bash
-sudo docker build .
+sudo docker-compose up
 ```
 
 License

@@ -1,10 +1,10 @@
-version: '1.0.0'
+version: "2"
 services:
-    ROS:
+    ros:
       build: ./docker/ROS
       ports:
           - "2203:2203"
-    TensorFlow:
+    tensorflow:
       build: ./docker/TensorFlow
       ports:
           - "3304:3304"

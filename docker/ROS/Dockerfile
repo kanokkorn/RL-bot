@@ -5,9 +5,9 @@ FROM ubuntu:trusty
 # install packages
 RUN apt-get update && apt-get install -q -y \
     dirmngr \
-        gnupg2 \
-            lsb-release \
-                && rm -rf /var/lib/apt/lists/*
+    gnupg2 \
+    lsb-release \
+    && rm -rf /var/lib/apt/lists/*
 
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
@@ -18,9 +18,9 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     python-rosdep \
-        python-rosinstall \
-            python-vcstools \
-                && rm -rf /var/lib/apt/lists/*
+    python-rosinstall \
+    python-vcstools \
+    && rm -rf /var/lib/apt/lists/*
 
 # setup environment
 ENV LANG C.UTF-8
@@ -34,7 +34,7 @@ RUN rosdep init \
 ENV ROS_DISTRO indigo
 RUN apt-get update && apt-get install -y \
     ros-indigo-ros-core=1.1.6-0* \
-        && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 # setup entrypoint
 COPY ./ros_entrypoint.sh /
