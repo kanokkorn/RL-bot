@@ -5,10 +5,10 @@ ping -q -w1 -c1 google.com &>/dev/null && echo 'Connected' || echo 'Offline'
 
 # Update & Upgrade existig packages
 sudo apt-get update
-Yes | sudo apt-get upgrade
+sudo apt-get upgrade -y
 
 # Install docker packages 
-Yes | sudo apt-get install \
+sudo apt-get install -y \
         apt-transport-https \
         ca-certificates \
         curl \
@@ -35,7 +35,7 @@ elif  [[ $arch == arm64* ]]; then
 fi
 
 # update and install docker ce
-Yes | sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io 
+sudo apt-get update -y && sudo apt-get install -y docker-ce docker-ce-cli containerd.io 
 
 # Ask if user want to run dockerfile
 PS3 = 'Do you want to build dockerfile now?'
