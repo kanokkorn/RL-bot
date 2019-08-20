@@ -39,12 +39,12 @@ sudo apt-get update -y && sudo apt-get install -y docker-ce docker-ce-cli contai
 
 # Ask if user want to run dockerfile
 PS3="Do you want to build dockerfile now?"
-options = ("Yes", "No")
+options=("Yes" "No")
 select opt in "${options[@]}"
 do
     case $opt in
         "Yes")
-            sudo docker build .
+            sudo docker-compose up -d
             ;;
         "No")
             break
