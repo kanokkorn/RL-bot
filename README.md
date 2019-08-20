@@ -50,7 +50,8 @@ Usage
 
 1. Clone this repository.
 1. For pre-setup run
-** This script is design to work with Raspberry Pi only. **
+
+**This script is design to work with Raspberry Pi only.**
 
 ```bash
 sudo run.sh
