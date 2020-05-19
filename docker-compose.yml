@@ -4,7 +4,3 @@ services:
       build: ./docker/ROS
       ports:
           - "2203:2203"
-    tensorflow:
-      build: ./docker/TensorFlow
-      ports:
-          - "3304:3304"
