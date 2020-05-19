@@ -1,7 +1,7 @@
 Reinforcement learning for construction site robot
 ======
 
-Robot that navigate through construction site using Q-learning written in python 3 powered by TensorFlow and Robot operating system  
+Robot that navigate through construction site using Q-learning written in python 3 powered by Pytorc and Robot operating system  
 
 How this work
 ------
@@ -15,7 +15,7 @@ How this work
                         |                Docker              |
                         +-----------+------------+-----------+
                         |           |            |           |
-                        |    ROS    | TensorFlow |  RTABMAP  |
+                        |    ROS    |   Pytorch  |  RTABMAP  |
                         | Container |  Container | Container |
                         |           |            |           |
                         +-----------+------------+-----------+
