@@ -1,6 +1,8 @@
 Reinforcement learning for construction site robot
 ======
 
+![Docker Image CI](https://github.com/kanokkorn/RL-bot/workflows/Docker%20Image%20CI/badge.svg)
+
 Robot that navigate through construction site using Q-learning written in python 3 powered by Pytorc and Robot operating system  
 
 How this work
