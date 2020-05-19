@@ -38,8 +38,10 @@ How to assemble robot
 
 Please check [wiki page](https://github.com/kanokkorn/RL-bot/wiki)
 
-Required
+Prerequisite
 ------
+
+You can choose to install it manually or use a script
 
 - [Docker CE](https://docs.docker.com/install/linux/docker-ce/debian/#install-docker-ce) for Raspberry Pi
 - MeshLab
@@ -48,8 +50,13 @@ Required
 Usage
 ------
 
-1. Clone this repository.
-1. For pre-setup run
+copy & paste in terminal
+
+```bash
+wget https://raw.githubusercontent.com/kanokkorn/RL-bot/master/run.sh && sudo chmod +x run.sh && ./run.sh
+```
+
+or clone this repository
 
 **This script is design to work with Raspberry Pi only.**
 
